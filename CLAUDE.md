@@ -15,7 +15,7 @@ A web platform for a maternal wellness practice based in the South Bay / greater
 - **Monogram:** TF
 - **Handle:** TBD (explore @thefeedwellness, @thefeedmaternal, @thefeedla, etc.)
 - **Domain:** TBD (explore thefeedwellness.com, thefeedmaternal.com, etc.)
-- **GitHub repo:** https://github.com/mjamrst/southbaymilkclub (to be renamed)
+- **GitHub repo:** https://github.com/mjamrst/thefeed
 
 ### Brand Identity
 
@@ -23,7 +23,8 @@ A web platform for a maternal wellness practice based in the South Bay / greater
 1. **Primary mark:** Abstract mother-and-child continuous line illustration (terracotta on cream) above serif wordmark "THE FEED" with sans-serif tagline "LACTATION & MATERNAL WELLNESS" below
 2. **Dark variant:** Same lockup on charcoal (#2D2D2D) background
 3. **Wordmark only:** "THE FEED" serif wordmark + tagline, no icon
-4. **Monogram:** "TF" interlocked serif letters — for hat embroidery, social avatars, favicons
+4. **Monogram:** "TF" interlocked serif letters — for hat embroidery, social avatars
+5. **Babymark:** Mother-child continuous line icon (terracotta) — used as favicon and small-format mark
 
 **Color palette:**
 - Terracotta / clay: #C4724E (primary brand color)
@@ -44,8 +45,8 @@ A web platform for a maternal wellness practice based in the South Bay / greater
 - A brand a stylish South Bay mom would proudly wear on a hat or carry on a tote
 
 **Logo production notes:**
-- Mother-child line mark needs consistent stroke weight when vectorized
-- Need a simplified mark variant for small formats (favicon, 32x32 avatar)
+- Mother-child line mark (babymark) is finalized and used as favicon
+- Babymark source file: `public/images/brand/babymark.png`
 - Terracotta embroidery on sage green hat = approved merch direction
 
 ### Business Vision
@@ -236,6 +237,6 @@ colors: {
 - [ ] NPI number registration
 - [ ] Domain registration
 - [ ] Social media handles secured
-- [ ] Rename GitHub repo from southbaymilkclub to the-feed (or thefeedwellness)
+- [x] Rename GitHub repo from southbaymilkclub → thefeed
 - [ ] Rebrand internal tools (package builder at sbmc-internal-tools.vercel.app)
 - [ ] First client expected via personal/professional network referrals
