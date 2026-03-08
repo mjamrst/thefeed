@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 
@@ -10,40 +11,39 @@ export function LogoFull({
   className?: string;
   light?: boolean;
 }) {
+  if (light) {
+    return (
+      <Link
+        href="/"
+        className={cn("flex flex-col items-center gap-1.5", className)}
+        aria-label="The Feed — Home"
+      >
+        <Image
+          src="/images/brand/logo-full.png"
+          alt="The Feed — Lactation & Maternal Wellness"
+          width={200}
+          height={200}
+          className="h-auto w-44 brightness-0 invert"
+          priority
+        />
+      </Link>
+    );
+  }
+
   return (
     <Link
       href="/"
-      className={cn("flex flex-col items-center gap-1.5", className)}
+      className={cn("flex flex-col items-center", className)}
       aria-label="The Feed — Home"
     >
-      <div className="flex items-baseline gap-[0.2em]">
-        <span
-          className={cn(
-            "font-serif text-lg tracking-[0.25em] uppercase leading-none font-normal",
-            light ? "text-brand-white/70" : "text-charcoal/70"
-          )}
-        >
-          The
-        </span>
-        <span
-          className={cn(
-            "font-serif text-xl tracking-[0.25em] uppercase leading-none",
-            light ? "text-brand-white" : "text-charcoal"
-          )}
-        >
-          Feed
-        </span>
-      </div>
-      {showTagline && (
-        <span
-          className={cn(
-            "text-[0.65rem] tracking-[0.35em] uppercase font-sans",
-            light ? "text-sand" : "text-warm-gray"
-          )}
-        >
-          Lactation &amp; Maternal Wellness
-        </span>
-      )}
+      <Image
+        src="/images/brand/logo-full.png"
+        alt="The Feed — Lactation & Maternal Wellness"
+        width={400}
+        height={400}
+        className="h-auto w-64 md:w-72"
+        priority
+      />
     </Link>
   );
 }
@@ -52,15 +52,17 @@ export function LogoHeader({ className }: { className?: string }) {
   return (
     <Link
       href="/"
-      className={cn("flex items-baseline gap-[0.15em]", className)}
+      className={cn("block", className)}
       aria-label="The Feed — Home"
     >
-      <span className="font-serif text-base md:text-lg tracking-[0.2em] uppercase text-charcoal/70 leading-none">
-        The
-      </span>
-      <span className="font-serif text-lg md:text-xl tracking-[0.2em] uppercase text-charcoal leading-none">
-        Feed
-      </span>
+      <Image
+        src="/images/brand/wordmark.png"
+        alt="The Feed — Lactation & Maternal Wellness"
+        width={600}
+        height={150}
+        className="h-8 md:h-10 w-auto"
+        priority
+      />
     </Link>
   );
 }
