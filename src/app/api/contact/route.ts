@@ -4,8 +4,10 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-// TODO: Add nellie@johnson6.com and mike@johnson6.com after verifying a domain in Resend
-const NOTIFY_EMAILS = ["mjlearn.ai@gmail.com"];
+const NOTIFY_EMAILS = [
+  "nellie@johnson6.com",
+  "mike@johnson6.com",
+];
 
 interface ContactPayload {
   name: string;
@@ -58,7 +60,7 @@ export async function POST(request: Request) {
   // Send notification email — don't block the success response if this fails
   try {
     await resend.emails.send({
-      from: "The Feed <onboarding@resend.dev>",
+      from: "The Feed <notifications@contact.thefeedwellness.com>",
       to: NOTIFY_EMAILS,
       subject: `New contact form submission from ${name}`,
       html: buildEmailHtml({ name, email, phone, due_date, message }),
