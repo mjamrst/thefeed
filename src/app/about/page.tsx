@@ -65,7 +65,7 @@ export default function AboutPage() {
         <ScrollReveal>
           <div className="mx-auto max-w-3xl">
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-8 text-center">
-              The long version
+              More about Nellie
             </h2>
             <div className="space-y-6 text-warm-gray leading-relaxed text-lg">
               <p>
