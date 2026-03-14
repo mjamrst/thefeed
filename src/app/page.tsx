@@ -258,7 +258,7 @@ export default function HomePage() {
                   wanted to be.&rdquo;
                 </p>
                 <cite className="text-charcoal text-sm font-medium not-italic">
-                  — Clara
+                  — Serenity
                 </cite>
               </blockquote>
               <blockquote className="bg-brand-white rounded-2xl p-8 text-left">
