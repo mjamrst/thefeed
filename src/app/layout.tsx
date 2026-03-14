@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     template: "%s | The Feed — Lactation & Maternal Wellness",
   },
   description:
-    "Expert lactation support, postpartum doula care, and childbirth education for South Bay families. Founded by Nellie Johnson, BSN, RN, CPD, LCCE.",
+    "Expert lactation support, postpartum doula care, and childbirth education for South Bay families. Founded by Nellie Johnson, BSN, RN, CLC, CPD.",
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
   openGraph: {
     type: "website",

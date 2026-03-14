@@ -16,9 +16,9 @@ export const metadata: Metadata = {
 
 const credentials = [
   "BSN, RN — Registered Nurse",
+  "Certified Lactation Counselor (CLC)",
   "Certified Postpartum Doula (CAPPA)",
-  "Certified Lactation Counselor (CLC) — in progress",
-  "Lamaze Certified Childbirth Educator (LCCE)",
+  "International Board Certified Lactation Consultant (IBCLC) — in progress",
   "Mental Health First Aid Certified",
   "Promoting First Relationships (PFR)",
   "CPR/BLS — American Heart Association",

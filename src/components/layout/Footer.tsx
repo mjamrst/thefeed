@@ -28,7 +28,10 @@ export function Footer() {
           {/* Service Area */}
           <p className="text-sm text-sand/70 max-w-md">
             Serving Manhattan Beach, Hermosa Beach, Redondo Beach, Palos Verdes,
-            Torrance, El Segundo, and Long Beach.
+            Torrance, El Segundo, Long Beach, and all of greater Los Angeles.*
+          </p>
+          <p className="text-xs text-sand/50">
+            *Travel fees may apply outside the South Bay.
           </p>
 
           {/* Contact & Social */}

@@ -3,64 +3,62 @@ import Link from "next/link";
 import { ScrollReveal } from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
-  title: "Services & Packages",
+  title: "Services",
   description:
-    "Explore The Feed's tiered perinatal care packages — from targeted lactation support to comprehensive prenatal-through-postpartum care. Serving the LA South Bay.",
+    "Explore The Feed's à la carte perinatal services — prenatal education, lactation support, newborn care, and postpartum doula visits. Serving the LA South Bay and greater Los Angeles.",
   openGraph: {
-    title: "Services & Packages | The Feed",
+    title: "Services | The Feed",
     description:
-      "Three tiers of perinatal support. Essentials ($525), Full Support ($1,350), Complete Journey ($2,500). Plus ongoing membership.",
+      "À la carte prenatal, postpartum, lactation, and doula services for LA families.",
   },
 };
 
-const tiers = [
+const categories = [
   {
-    name: "Essentials",
-    tier: "Tier 1",
-    price: "$525",
-    bestFor: "Experienced moms with a specific issue to troubleshoot",
-    includes: [
-      "2 in-home visits (initial + follow-up)",
-      "2 weeks of async messaging support",
-      "Personalized care plan",
+    name: "Prenatal Services",
+    services: [
+      { title: "Prenatal Breastfeeding Education", duration: "1 hour", format: "In-home or virtual" },
+      { title: "Prenatal Pumping & Bottle Prep Class", duration: "1 hour", format: "Virtual" },
+      { title: "Prenatal Postpartum Recovery Planning", duration: "1 hour", format: "Virtual" },
     ],
-    highlighted: false,
   },
   {
-    name: "Full Support",
-    tier: "Tier 2",
-    price: "$1,350",
-    bestFor: "First-time moms wanting comprehensive support through the critical early weeks",
-    includes: [
-      "Prenatal preparation session",
-      "2 postpartum in-home visits",
-      "Newborn care coaching",
-      "6 weeks of async messaging support",
-      "Personalized care plan & resources",
+    name: "Early Postpartum (0–2 weeks)",
+    services: [
+      { title: "Initial Newborn Feeding Assessment", duration: "1.5 hours", format: "In-home" },
+      { title: "Follow-Up Visit", duration: "1 hour", format: "In-home" },
+      { title: "Postpartum Recovery & Newborn Care Visit", duration: "2 hours", format: "In-home" },
     ],
-    highlighted: true,
   },
   {
-    name: "Complete Journey",
-    tier: "Tier 3",
-    price: "$2,500",
-    bestFor:
-      "Families wanting the full white-glove experience from pregnancy through the fourth trimester",
-    includes: [
-      "Everything in Full Support",
-      "Extended prenatal through 3 months postpartum",
-      "4 total in-home visits",
-      "Ongoing membership included",
-      "Priority scheduling & extended messaging",
+    name: "Ongoing Lactation Support",
+    services: [
+      { title: "Follow-Up Feeding Support Visit", duration: "1 hour", format: "In-home or virtual" },
+      { title: "Milk Supply Consultation", duration: "1 hour", format: "Virtual" },
+      { title: "Bottle Introduction & Paced Feeding Tutorial", duration: "1 hour", format: "In-home or virtual" },
+      { title: "Combo Feeding Support (breast + formula)", duration: "1 hour", format: "Virtual" },
     ],
-    highlighted: false,
+  },
+  {
+    name: "Specialty Sessions",
+    services: [
+      { title: "Tongue-Tie Education & Referral Guidance", duration: "45 min", format: "Virtual" },
+      { title: "Postpartum Mood Check-In & Resource Navigation", duration: "1 hour", format: "Virtual" },
+    ],
+  },
+  {
+    name: "Postpartum Doula Support",
+    services: [
+      { title: "Daytime Postpartum Support Visit", duration: "3–4 hours", format: "In-home · Weekends" },
+      { title: "Evening Postpartum Support", duration: "4 hours", format: "In-home · 6–10 PM" },
+    ],
   },
 ];
 
 const faqs = [
   {
     q: "What\u2019s the difference between lactation support and doula care?",
-    a: "A lactation specialist focuses specifically on breastfeeding and infant feeding challenges, while a doula provides broader emotional and physical support during pregnancy, birth, and the postpartum period. Nellie brings expertise across all of these areas \u2014 she\u2019s a registered nurse, certified postpartum doula, and childbirth educator, so you get comprehensive support rather than having to piece together multiple providers.",
+    a: "A lactation specialist focuses specifically on breastfeeding and infant feeding challenges, while a doula provides broader emotional and physical support during pregnancy, birth, and the postpartum period. Nellie brings expertise across all of these areas \u2014 she\u2019s a registered nurse, certified lactation counselor, and certified postpartum doula, so you get comprehensive support rather than having to piece together multiple providers.",
   },
   {
     q: "Do you accept insurance?",
@@ -68,7 +66,7 @@ const faqs = [
   },
   {
     q: "What areas do you serve?",
-    a: "We serve families throughout the LA South Bay, including Manhattan Beach, Hermosa Beach, Redondo Beach, Palos Verdes, Torrance, El Segundo, and Long Beach. All visits take place in your home.",
+    a: "We serve families throughout the LA South Bay and greater Los Angeles, including Manhattan Beach, Hermosa Beach, Redondo Beach, Palos Verdes, Torrance, El Segundo, Long Beach, and beyond. Travel fees may apply outside the South Bay. All visits take place in your home.",
   },
   {
     q: "What should I expect during a home visit?",
@@ -76,11 +74,11 @@ const faqs = [
   },
   {
     q: "When should I book \u2014 before or after baby arrives?",
-    a: "Both! If you\u2019re still pregnant, our Tier 2 and Tier 3 packages include prenatal sessions to help you prepare. If baby is already here and you need support now, Tier 1 Essentials gets you an initial visit quickly. There\u2019s no wrong time to reach out.",
+    a: "Both! We offer prenatal sessions to help you prepare before baby arrives, as well as postpartum visits for when you need hands-on support. There\u2019s no wrong time to reach out.",
   },
   {
-    q: "What is the membership?",
-    a: "After your package concludes, you can continue receiving ongoing async messaging access to Nellie for $125/month. It\u2019s like having a knowledgeable friend on speed dial \u2014 for those moments when you just need a quick answer or reassurance.",
+    q: "Do you offer virtual visits?",
+    a: "Yes! Many of our services are available virtually, and some are offered as either in-home or virtual. During your intro call we\u2019ll help you figure out what format works best for your situation.",
   },
 ];
 
@@ -91,122 +89,64 @@ export default function ServicesPage() {
       <section className="pt-32 pb-16 md:pt-40 md:pb-20 px-6">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="font-serif text-4xl md:text-5xl text-charcoal mb-4">
-            Packages & Pricing
+            Services
           </h1>
           <p className="text-warm-gray text-lg md:text-xl leading-relaxed">
-            No per-visit billing. No surprise fees. Just clear, relationship-based
-            care packages designed to support you through every stage.
+            À la carte prenatal, postpartum, and lactation services — choose
+            exactly what you need, when you need it.
           </p>
         </div>
       </section>
 
-      {/* Tiers */}
+      {/* Service Categories */}
       <section className="pb-20 md:pb-28 px-6">
-        <div className="mx-auto max-w-6xl">
-          <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-            {tiers.map((tier) => (
-              <div
-                key={tier.name}
-                className={`rounded-2xl p-8 flex flex-col relative ${
-                  tier.highlighted
-                    ? "bg-charcoal text-brand-white ring-2 ring-terracotta"
-                    : "bg-brand-white border border-sand"
-                }`}
-              >
-                {tier.highlighted && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-terracotta text-white text-xs font-medium px-4 py-1 rounded-full">
-                    Recommended
-                  </span>
-                )}
-                <span
-                  className={`text-sm uppercase tracking-wider mb-2 ${
-                    tier.highlighted ? "text-sand" : "text-warm-gray"
-                  }`}
-                >
-                  {tier.tier}
-                </span>
-                <h2 className="font-serif text-2xl mb-1">{tier.name}</h2>
-                <p className="text-4xl font-serif text-terracotta mb-2">
-                  {tier.price}
-                </p>
-                <p
-                  className={`text-sm mb-6 ${
-                    tier.highlighted ? "text-sand" : "text-warm-gray"
-                  }`}
-                >
-                  Best for: {tier.bestFor}
-                </p>
-
-                <div className="border-t border-current/10 pt-6 mb-8 flex-1">
-                  <p
-                    className={`text-xs uppercase tracking-wider mb-4 ${
-                      tier.highlighted ? "text-sand" : "text-warm-gray"
-                    }`}
-                  >
-                    What&rsquo;s included
-                  </p>
-                  <ul className="space-y-3">
-                    {tier.includes.map((item) => (
-                      <li key={item} className="flex items-start gap-3">
-                        <svg
-                          className="h-5 w-5 text-terracotta shrink-0 mt-0.5"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          strokeWidth={2}
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            d="M4.5 12.75l6 6 9-13.5"
-                          />
-                        </svg>
-                        <span className="text-sm">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
+        <div className="mx-auto max-w-4xl space-y-12">
+          {categories.map((category) => (
+            <ScrollReveal key={category.name}>
+              <div>
+                <h2 className="font-serif text-2xl md:text-3xl text-charcoal mb-6">
+                  {category.name}
+                </h2>
+                <div className="space-y-3">
+                  {category.services.map((service) => (
+                    <div
+                      key={service.title}
+                      className="bg-brand-white rounded-xl border border-sand px-6 py-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2"
+                    >
+                      <h3 className="text-charcoal font-medium">
+                        {service.title}
+                      </h3>
+                      <div className="flex items-center gap-3 text-sm text-warm-gray shrink-0">
+                        <span>{service.duration}</span>
+                        <span className="text-sand">·</span>
+                        <span>{service.format}</span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-
-                <Link
-                  href="/contact"
-                  className={`rounded-full px-6 py-3 text-center text-sm font-medium transition-colors ${
-                    tier.highlighted
-                      ? "bg-terracotta text-white hover:bg-terracotta/90"
-                      : "bg-terracotta/10 text-terracotta hover:bg-terracotta/20"
-                  }`}
-                >
-                  Get Started
-                </Link>
               </div>
-            ))}
-          </div>
+            </ScrollReveal>
+          ))}
         </div>
       </section>
 
-      {/* Membership */}
+      {/* CTA */}
       <section className="py-16 md:py-24 px-6 bg-brand-white">
         <ScrollReveal>
           <div className="mx-auto max-w-3xl text-center">
-            <span className="text-sm uppercase tracking-wider text-terracotta mb-2 block">
-              Add-On
-            </span>
             <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">
-              Ongoing Membership
+              Not sure where to start?
             </h2>
-            <p className="text-4xl font-serif text-terracotta mb-4">
-              $125<span className="text-lg text-warm-gray">/month</span>
-            </p>
             <p className="text-warm-gray text-lg leading-relaxed max-w-xl mx-auto mb-8">
-              Available to any package client after their visits conclude. Keep
-              async messaging access to Nellie for as long as you need it —
-              like having a knowledgeable friend on call for those 2 AM
-              questions.
+              Every family is different. Let&rsquo;s talk about what&rsquo;s
+              going on and figure out the right support together — no
+              pressure, no commitment.
             </p>
             <Link
               href="/contact"
-              className="rounded-full bg-terracotta px-8 py-4 text-base font-medium text-white transition-all hover:bg-terracotta/90 hover:shadow-lg inline-block"
+              className="rounded-full bg-terracotta px-8 py-4 text-base font-medium text-white transition-all hover:bg-terracotta-dark hover:shadow-lg inline-block"
             >
-              Book Your Free Intro Call
+              Let&rsquo;s Connect for an Intro Call
             </Link>
           </div>
         </ScrollReveal>

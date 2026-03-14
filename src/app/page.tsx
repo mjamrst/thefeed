@@ -23,14 +23,26 @@ export default function HomePage() {
               "Hermosa Beach, CA",
               "Redondo Beach, CA",
               "Palos Verdes, CA",
+              "Rancho Palos Verdes, CA",
               "Torrance, CA",
               "El Segundo, CA",
               "Long Beach, CA",
+              "Hawthorne, CA",
+              "Gardena, CA",
+              "Carson, CA",
+              "San Pedro, CA",
+              "Lomita, CA",
+              "Playa Vista, CA",
+              "Marina del Rey, CA",
+              "Culver City, CA",
+              "Inglewood, CA",
+              "Westchester, CA",
+              "Los Angeles, CA",
             ],
             founder: {
               "@type": "Person",
               name: "Nellie Johnson",
-              jobTitle: "BSN, RN, CPD, LCCE",
+              jobTitle: "BSN, RN, CLC, CPD",
             },
             priceRange: "$$",
           }),
@@ -116,83 +128,31 @@ export default function HomePage() {
           <div className="mx-auto max-w-6xl">
             <div className="text-center mb-14">
               <h2 className="font-serif text-3xl md:text-4xl text-charcoal mb-4">
-                Care that grows with you
+                Care that fits your needs
               </h2>
               <p className="text-warm-gray text-lg max-w-2xl mx-auto">
-                Three tiers of support designed around how you actually need
-                help — not how many appointments you can book.
+                À la carte services so you get exactly the support you need —
+                prenatal, postpartum, or anywhere in between.
               </p>
             </div>
 
-            <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
-              {/* Tier 1 */}
-              <div className="bg-cream rounded-2xl p-8 flex flex-col">
-                <span className="text-sm uppercase tracking-wider text-warm-gray mb-2">
-                  Tier 1
-                </span>
-                <h3 className="font-serif text-2xl text-charcoal mb-1">
-                  Essentials
-                </h3>
-                <p className="text-3xl font-serif text-terracotta mb-4">$525</p>
-                <p className="text-warm-gray text-sm leading-relaxed mb-6 flex-1">
-                  2 in-home visits with async messaging support. Best for
-                  experienced moms with a specific concern to address.
-                </p>
-                <Link
-                  href="/services"
-                  className="text-sm text-terracotta font-medium hover:text-terracotta-dark transition-colors"
-                >
-                  Learn more →
-                </Link>
-              </div>
-
-              {/* Tier 2 — Highlighted */}
-              <div className="bg-charcoal text-brand-white rounded-2xl p-8 flex flex-col ring-2 ring-terracotta relative">
-                <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-terracotta text-white text-xs font-medium px-4 py-1 rounded-full">
-                  Most Popular
-                </span>
-                <span className="text-sm uppercase tracking-wider text-sand mb-2">
-                  Tier 2
-                </span>
-                <h3 className="font-serif text-2xl mb-1">Full Support</h3>
-                <p className="text-3xl font-serif text-terracotta mb-4">
-                  $1,350
-                </p>
-                <p className="text-sand text-sm leading-relaxed mb-6 flex-1">
-                  Prenatal prep, 2 postpartum visits, newborn coaching, and 6
-                  weeks of messaging. The complete early-weeks package.
-                </p>
-                <Link
-                  href="/services"
-                  className="text-sm text-terracotta font-medium hover:text-terracotta-light transition-colors"
-                >
-                  Learn more →
-                </Link>
-              </div>
-
-              {/* Tier 3 */}
-              <div className="bg-cream rounded-2xl p-8 flex flex-col">
-                <span className="text-sm uppercase tracking-wider text-warm-gray mb-2">
-                  Tier 3
-                </span>
-                <h3 className="font-serif text-2xl text-charcoal mb-1">
-                  Complete Journey
-                </h3>
-                <p className="text-3xl font-serif text-terracotta mb-4">
-                  $2,500
-                </p>
-                <p className="text-warm-gray text-sm leading-relaxed mb-6 flex-1">
-                  Prenatal through 3 months postpartum. 4 visits, ongoing
-                  membership, and white-glove support through the fourth
-                  trimester.
-                </p>
-                <Link
-                  href="/services"
-                  className="text-sm text-terracotta font-medium hover:text-terracotta-dark transition-colors"
-                >
-                  Learn more →
-                </Link>
-              </div>
+            <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 lg:gap-8">
+              {[
+                { title: "Prenatal Services", desc: "Breastfeeding education, pumping prep, and postpartum recovery planning — before baby arrives." },
+                { title: "Early Postpartum", desc: "Newborn feeding assessments, follow-up visits, and hands-on recovery support in your home." },
+                { title: "Lactation Support", desc: "Feeding support, milk supply consultations, bottle introduction, and combo feeding guidance." },
+                { title: "Specialty Sessions", desc: "Tongue-tie education, referral guidance, and postpartum mood support." },
+                { title: "Postpartum Doula", desc: "Daytime and evening in-home support — an extra set of experienced hands when you need them most." },
+              ].map((item) => (
+                <div key={item.title} className="bg-cream rounded-2xl p-8 flex flex-col">
+                  <h3 className="font-serif text-xl text-charcoal mb-3">
+                    {item.title}
+                  </h3>
+                  <p className="text-warm-gray text-sm leading-relaxed flex-1">
+                    {item.desc}
+                  </p>
+                </div>
+              ))}
             </div>
 
             <div className="text-center mt-10">
@@ -200,7 +160,7 @@ export default function HomePage() {
                 href="/services"
                 className="inline-flex items-center text-terracotta font-medium hover:text-terracotta-dark transition-colors group"
               >
-                View all packages & pricing
+                View all services
                 <svg
                   className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"
                   fill="none"
