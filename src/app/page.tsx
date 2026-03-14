@@ -292,22 +292,26 @@ export default function HomePage() {
               {/* TODO: Replace with real testimonials */}
               <blockquote className="bg-brand-white rounded-2xl p-8 text-left">
                 <p className="text-warm-gray italic leading-relaxed mb-4">
-                  &ldquo;Nellie made us feel like we weren&rsquo;t alone in this.
-                  Her calm, knowledgeable presence in our home during those first
-                  weeks was everything.&rdquo;
+                  &ldquo;When postpartum felt like life was spinning in a million
+                  directions, Nurse Nellie was there &mdash; answering every
+                  question, calming every fear. She helped me become the mom I
+                  wanted to be.&rdquo;
                 </p>
                 <cite className="text-charcoal text-sm font-medium not-italic">
-                  — Coming soon
+                  — Clara
                 </cite>
               </blockquote>
               <blockquote className="bg-brand-white rounded-2xl p-8 text-left">
                 <p className="text-warm-gray italic leading-relaxed mb-4">
-                  &ldquo;I wish I had found The Feed with my first baby. The ongoing
-                  support between visits made all the difference — I always had
-                  someone to ask.&rdquo;
+                  &ldquo;When we had our first baby, we were completely lost.
+                  Nellie showed up and walked us through everything &mdash;
+                  diapers, baths, feeding, all of it. Every time something
+                  scared us, she was right there. She made us feel like we
+                  weren&rsquo;t just surviving parenthood, we were ready
+                  for it.&rdquo;
                 </p>
                 <cite className="text-charcoal text-sm font-medium not-italic">
-                  — Coming soon
+                  — Maddie
                 </cite>
               </blockquote>
             </div>
