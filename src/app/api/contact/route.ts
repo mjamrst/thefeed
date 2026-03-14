@@ -4,11 +4,8 @@ import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
-const NOTIFY_EMAILS = [
-  "mjlearn.ai@gmail.com",  // Resend sandbox only delivers to this address until a domain is verified
-  "nellie@johnson6.com",
-  "mike@johnson6.com",
-];
+// TODO: Add nellie@johnson6.com and mike@johnson6.com after verifying a domain in Resend
+const NOTIFY_EMAILS = ["mjlearn.ai@gmail.com"];
 
 interface ContactPayload {
   name: string;
