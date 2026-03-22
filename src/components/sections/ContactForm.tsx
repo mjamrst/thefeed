@@ -39,7 +39,7 @@ export function ContactForm() {
     } catch {
       setStatus("error");
       setErrorMessage(
-        "Something went wrong. Please email us at hello@thefeedwellness.com instead."
+        "Something went wrong. Please email us at nellie@thefeedwellness.com instead."
       );
     }
   }

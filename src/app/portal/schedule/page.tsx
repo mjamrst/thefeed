@@ -53,7 +53,7 @@ export default async function SchedulePage() {
             please reach out to book your visit.
           </p>
           <a
-            href="mailto:hello@thefeedwellness.com"
+            href="mailto:nellie@thefeedwellness.com"
             className="rounded-full bg-terracotta px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-terracotta/90 inline-block"
           >
             Email to Schedule

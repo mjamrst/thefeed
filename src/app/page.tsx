@@ -17,7 +17,7 @@ export default function HomePage() {
             description:
               "Expert lactation support, postpartum doula care, childbirth education, and newborn care for South Bay LA families.",
             url: "https://thefeedwellness.com",
-            email: "hello@thefeedwellness.com",
+            email: "nellie@thefeedwellness.com",
             areaServed: [
               "Manhattan Beach, CA",
               "Hermosa Beach, CA",

@@ -85,7 +85,7 @@ export default async function PortalPage() {
             </p>
           </Link>
           <a
-            href="mailto:hello@thefeedwellness.com"
+            href="mailto:nellie@thefeedwellness.com"
             className="bg-brand-white border border-sand rounded-2xl p-6 hover:border-terracotta/30 transition-colors group"
           >
             <svg
