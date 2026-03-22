@@ -37,10 +37,10 @@ export function Footer() {
           {/* Contact & Social */}
           <div className="flex flex-col items-center gap-3">
             <a
-              href="mailto:hello@thefeedwellness.com"
+              href="mailto:nellie@thefeedwellness.com"
               className="text-sm text-sand hover:text-brand-white transition-colors"
             >
-              hello@thefeedwellness.com
+              nellie@thefeedwellness.com
             </a>
             <a
               href="https://instagram.com/thefeedwellness"
