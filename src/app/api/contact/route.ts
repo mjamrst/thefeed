@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 const NOTIFY_EMAILS = [
   "nellie@johnson6.com",
   "mike@johnson6.com",
@@ -57,17 +55,24 @@ export async function POST(request: Request) {
     );
   }
 
-  // Send notification email — don't block the success response if this fails
-  try {
-    await resend.emails.send({
-      from: "The Feed <notifications@contact.thefeedwellness.com>",
-      to: NOTIFY_EMAILS,
-      subject: `New contact form submission from ${name}`,
-      html: buildEmailHtml({ name, email, phone, due_date, message }),
-    });
-  } catch (emailError) {
-    // Log but don't fail the request — the submission is already saved
-    console.error("Resend email error:", emailError);
+  // Send notification email — don't block the success response if this fails.
+  // Instantiate Resend lazily so a missing key doesn't break the build.
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (resendApiKey) {
+    try {
+      const resend = new Resend(resendApiKey);
+      await resend.emails.send({
+        from: "The Feed <notifications@contact.thefeedwellness.com>",
+        to: NOTIFY_EMAILS,
+        subject: `New contact form submission from ${name}`,
+        html: buildEmailHtml({ name, email, phone, due_date, message }),
+      });
+    } catch (emailError) {
+      // Log but don't fail the request — the submission is already saved
+      console.error("Resend email error:", emailError);
+    }
+  } else {
+    console.warn("RESEND_API_KEY not set — skipping notification email");
   }
 
   return NextResponse.json({ success: true });
